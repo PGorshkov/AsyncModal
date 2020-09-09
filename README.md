@@ -1,29 +1,52 @@
-# asyncmodal
+# AyncModal
+## Install
+`
+npm install 'git://github.com/PGorshkov/AsyncModal.git' -S
+`
 
-## Project setup
+## Example
+**App.vue**
+```javascript
+<template>
+  <div id="app" class="app">
+    <asyncmodal ref="modal"/>
+    <router-view/>
+  </div>
+</template>
+<script>
+import asyncmodal from 'asyncmodal'
+export default {
+  name: 'app',
+  components: {
+    asyncmodal
+  },
+  mounted () {
+    this.$root.$modal = this.$refs.modal.openModal
+  }
+}
+</script>
 ```
-npm install
+**OpenModal**
+```javascript
+import Component from 'Component.vue'
+
+async openModal () {
+	const props = {}
+	const options = {}
+	const data = await this.$root.$modal(Component, props, options)
+	console.log(data)
+}
+```
+**Component.vue**
+```javascript
+closeModal () {
+	const promiseReturn = { test: 'test' }
+	this.$attrs.closeModal(promiseReturn, true)
+}
 ```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your unit tests
-```
-npm run test:unit
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Methods
+|  Methods | params  |
+| ------------ | ------------ |
+| **openModal**   | component (**required**), propsComponent = {}, modalOptions = {}  |
+| **closeModal**  |  promiseReturn = null, destroyFull = false |   |
