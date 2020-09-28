@@ -1,5 +1,5 @@
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator'
+import { Component, Vue, Prop } from 'vue-property-decorator'
 import { IComponentItem, IModalOptions } from '@/components/interface/InterfaceAsyncModal'
 
 @Component
@@ -15,6 +15,7 @@ import { IComponentItem, IModalOptions } from '@/components/interface/InterfaceA
  * @param {Array} componentsList - Список компонентов в хронологии вызовов
  */
 export default class MixinsState extends Vue {
+  @Prop({ type: Boolean }) closeClickOverlay: boolean | undefined
   isOpen = false
   isOpenChild = false
   isOpenOverlay = false

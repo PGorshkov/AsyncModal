@@ -11,6 +11,12 @@ import MixinsState from '@/components/mixins/MixinsState.vue'
 
 @Component
 export default class MixinsActions extends mixins(MixinsState) {
+  closeOverlay () {
+    if (this.closeClickOverlay) {
+      this.closeModal()
+    }
+  }
+
   /**
    * Открытие модального окна
    * @param {Component} component - vue компонент

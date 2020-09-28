@@ -1,14 +1,14 @@
 {
-  "name": "asyncmodal",
-  "version": "0.1.0",
-  "main": "dist/asyncModal.umd.js",
-  "module": "dist/asyncModal.esm.js",
-  "unpkg": "dist/asyncModal.min.js",
+  "name": "async-modal",
+  "version": "0.1.1",
+  "main": "dist/AsyncModal.umd.js",
+  "module": "dist/AsyncModal.esm.js",
+  "unpkg": "dist/AsyncModal.min.js",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "library": "cross-env vue-cli-service build --target lib --name asyncModal 'src/components/AsyncModal.vue'",
+    "library": "cross-env vue-cli-service build --target lib --name AsyncModal 'src/components/AsyncModal.vue'",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint"
   },
@@ -78,14 +78,5 @@
   ],
   "jest": {
     "preset": "@vue/cli-plugin-unit-jest/presets/typescript-and-babel"
-  },
-  "gitHooks": {
-    "pre-commit": "lint-staged"
-  },
-  "lint-staged": {
-    "*.{js,jsx,vue,ts,tsx}": [
-      "vue-cli-service lint",
-      "git add"
-    ]
   }
 }

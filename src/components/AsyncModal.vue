@@ -4,7 +4,11 @@
         name="modal"
         v-on:after-enter="overlayAfterEnter"
         v-on:afterLeave="overlayAfterLeave">
-      <section class="async-modal__overlay" v-if="isOpenOverlay">
+      <section
+          class="async-modal__overlay"
+          v-if="isOpenOverlay"
+          @click="closeOverlay"
+      >
       </section>
     </transition>
     <transition

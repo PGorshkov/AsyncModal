@@ -1,14 +1,5 @@
-(function webpackUniversalModuleDefinition(root, factory) {
-	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("vue"));
-	else if(typeof define === 'function' && define.amd)
-		define([], factory);
-	else if(typeof exports === 'object')
-		exports["asyncModal"] = factory(require("vue"));
-	else
-		root["asyncModal"] = factory(root["Vue"]);
-})((typeof self !== 'undefined' ? self : this), function(__WEBPACK_EXTERNAL_MODULE__8bbf__) {
-return /******/ (function(modules) { // webpackBootstrap
+module.exports =
+/******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
 /******/
@@ -1811,7 +1802,7 @@ module.exports = store.inspectSource;
 /***/ "8bbf":
 /***/ (function(module, exports) {
 
-module.exports = __WEBPACK_EXTERNAL_MODULE__8bbf__;
+module.exports = require("vue");
 
 /***/ }),
 
@@ -3801,12 +3792,12 @@ if (typeof window !== 'undefined') {
 // Indicate to webpack that this file can be concatenated
 /* harmony default export */ var setPublicPath = (null);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"511d8d88-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/AsyncModal.vue?vue&type=template&id=eb9d5a80&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.isOpen)?_c('section',{staticClass:"async-modal__container"},[_c('transition',{attrs:{"name":"modal"},on:{"after-enter":_vm.overlayAfterEnter,"afterLeave":_vm.overlayAfterLeave}},[(_vm.isOpenOverlay)?_c('section',{staticClass:"async-modal__overlay"}):_vm._e()]),_c('transition',{attrs:{"name":"bounce"},on:{"after-enter":function($event){_vm.isOpenContentAnimate = false},"afterLeave":function($event){return _vm.closeContent()}}},[(_vm.isOpenContent && !!_vm.lastComponent)?_c('section',{staticClass:"async-modal__content"},[_c('keep-alive',[_c(_vm.lastComponent.component,_vm._b({tag:"component"},'component',_vm.lastComponent.props,false))],1)],1):_vm._e()])],1):_vm._e()}
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"511d8d88-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/AsyncModal.vue?vue&type=template&id=091d162e&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.isOpen)?_c('section',{staticClass:"async-modal__container"},[_c('transition',{attrs:{"name":"modal"},on:{"after-enter":_vm.overlayAfterEnter,"afterLeave":_vm.overlayAfterLeave}},[(_vm.isOpenOverlay)?_c('section',{staticClass:"async-modal__overlay",on:{"click":_vm.closeOverlay}}):_vm._e()]),_c('transition',{attrs:{"name":"bounce"},on:{"after-enter":function($event){_vm.isOpenContentAnimate = false},"afterLeave":function($event){return _vm.closeContent()}}},[(_vm.isOpenContent && !!_vm.lastComponent)?_c('section',{staticClass:"async-modal__content"},[_c('keep-alive',[_c(_vm.lastComponent.component,_vm._b({tag:"component"},'component',_vm.lastComponent.props,false))],1)],1):_vm._e()])],1):_vm._e()}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/AsyncModal.vue?vue&type=template&id=eb9d5a80&
+// CONCATENATED MODULE: ./src/components/AsyncModal.vue?vue&type=template&id=091d162e&
 
 // CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/classCallCheck.js
 function _classCallCheck(instance, Constructor) {
@@ -4919,6 +4910,10 @@ function (_Vue) {
   return MixinsState;
 }(external_commonjs_vue_commonjs2_vue_root_Vue_default.a);
 
+__decorate([Prop({
+  type: Boolean
+})], MixinsStatevue_type_script_lang_ts_MixinsState.prototype, "closeClickOverlay", void 0);
+
 MixinsStatevue_type_script_lang_ts_MixinsState = __decorate([vue_class_component_esm
 /**
  * Описание класса AsyncModal
@@ -5080,14 +5075,21 @@ var MixinsActionsvue_type_script_lang_ts_MixinsActions = /*#__PURE__*/function (
   }
 
   _createClass(MixinsActions, [{
-    key: "openModal",
-
+    key: "closeOverlay",
+    value: function closeOverlay() {
+      if (this.closeClickOverlay) {
+        this.closeModal();
+      }
+    }
     /**
      * Открытие модального окна
      * @param {Component} component - vue компонент
      * @param {Object} props - входные параметры для компонента
      * @param {Object} modalOptions - надстройки для модального окна
      */
+
+  }, {
+    key: "openModal",
     value: function openModal(component) {
       var _this = this;
 
@@ -5412,5 +5414,4 @@ module.exports = global.Promise;
 /***/ })
 
 /******/ })["default"];
-});
-//# sourceMappingURL=asyncModal.umd.js.map
+//# sourceMappingURL=AsyncModal.common.js.map
