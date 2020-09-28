@@ -51,7 +51,7 @@ closeModal () {
 | **openModal**   | component (**required**), propsComponent = {}, modalOptions = {}  |
 | **closeModal**  |  promiseReturn = null, destroyFull = false |
 
-## Props
-|  Prop | type | description |
+## Modal options
+|  Options | type | description |
 | ------------ | ------------ | ------------ |
 | **closeClickOverlay** | Boolean | Close modal click overlay |

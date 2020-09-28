@@ -1,5 +1,5 @@
 <script lang="ts">
-import { Component, Vue, Prop } from 'vue-property-decorator'
+import { Component, Vue } from 'vue-property-decorator'
 import { IComponentItem, IModalOptions } from '@/components/interface/InterfaceAsyncModal'
 
 @Component
@@ -11,23 +11,31 @@ import { IComponentItem, IModalOptions } from '@/components/interface/InterfaceA
  * @param {Boolean} isOpenContent - состояние контейнера контента
  * @param {Boolean} isOpenContentAnimate - состояние полного завершения анимации isOpenContent
  *
- * @param {Object} modalOptions - Надстройки для модального окна
+ * @param {Object} defaultModalOptions - Стандартные надстройки для модального окна
  * @param {Array} componentsList - Список компонентов в хронологии вызовов
  */
 export default class MixinsState extends Vue {
-  @Prop({ type: Boolean }) closeClickOverlay: boolean | undefined
   isOpen = false
   isOpenChild = false
   isOpenOverlay = false
   isOpenContent = false
   isOpenContentAnimate = false
 
-  modalOptions: IModalOptions = {}
+  defaultModalOptions: IModalOptions = {
+    closeClickOverlay: true
+  }
+
   componentsList: IComponentItem[] = []
 
   promiseReturn: any = null
 
   destroyFull: boolean | null = false
+
+  get viewComponent (): IComponentItem | null {
+    return this.componentsList.length
+      ? this.componentsList[this.componentsList.length - 1]
+      : null
+  }
 }
 
 </script>

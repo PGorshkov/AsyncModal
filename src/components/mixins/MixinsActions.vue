@@ -12,9 +12,7 @@ import MixinsState from '@/components/mixins/MixinsState.vue'
 @Component
 export default class MixinsActions extends mixins(MixinsState) {
   closeOverlay () {
-    if (this.closeClickOverlay) {
-      this.closeModal()
-    }
+    this.viewComponent?.modalOptions.closeClickOverlay && this.closeModal()
   }
 
   /**
@@ -89,7 +87,7 @@ export default class MixinsActions extends mixins(MixinsState) {
         ...props,
         closeModal: this.closeModal
       },
-      modalOptions: { ...this.modalOptions, ...modalOptions }
+      modalOptions: { ...this.defaultModalOptions, ...modalOptions }
     }
   }
 }

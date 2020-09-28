@@ -1,4 +1,6 @@
-export interface IModalOptions {}
+export interface IModalOptions {
+  closeClickOverlay?: boolean
+}
 export interface IPropsComponent {
 	[k: string]: any
 }

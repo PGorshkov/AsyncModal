@@ -23,7 +23,9 @@ export default class App extends Vue {
   }
 
   async openM () {
-    const data = await (this as any).$root.$modal(PageFirst, { propFirst: 'propFirst' }, {})
+    const data = await (this as any).$root.$modal(PageFirst, { propFirst: 'propFirst' }, {
+      closeClickOverlay: false
+    })
     console.log('App', data)
   }
 }
