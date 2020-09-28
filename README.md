@@ -49,4 +49,9 @@ closeModal () {
 |  Methods | params  |
 | ------------ | ------------ |
 | **openModal**   | component (**required**), propsComponent = {}, modalOptions = {}  |
-| **closeModal**  |  promiseReturn = null, destroyFull = false |   |
+| **closeModal**  |  promiseReturn = null, destroyFull = false |
+
+## Props
+|  Prop | type | description |
+| ------------ | ------------ | ------------ |
+| **closeClickOverlay** | Boolean | Close modal click overlay |
