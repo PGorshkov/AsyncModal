@@ -11,6 +11,9 @@ import MixinsState from '@/components/mixins/MixinsState.vue'
 
 @Component
 export default class MixinsActions extends mixins(MixinsState) {
+  /**
+   * Закрытие окна вне области
+   */
   closeOverlay () {
     this.viewComponent?.modalOptions.closeClickOverlay && this.closeModal()
   }
